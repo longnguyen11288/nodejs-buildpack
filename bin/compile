@@ -74,7 +74,7 @@ PATH=$build_dir/vendor/node/bin:$PATH
 # Run subsequent node/npm commands from the build path
 cd $build_dir
 
-wget https://download.run.pivotal.io/openjdk/lucid/x86_64/openjdk-1.8.0_25.tar.gz
+curl -O https://download.run.pivotal.io/openjdk/lucid/x86_64/openjdk-1.8.0_25.tar.gz
 tar xvf openjdk-1.8.0_25.tar.gz
 
 # If node_modules directory is checked into source control then
