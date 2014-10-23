@@ -70,6 +70,7 @@ mkdir -p $build_dir/vendor
 mv $build_dir/node-v$node_version-linux-x64 $build_dir/vendor/node
 chmod +x $build_dir/vendor/node/bin/*
 PATH=$build_dir/vendor/node/bin:$build_dir/bin:$PATH
+CLASSPATH=$build_dir/jre/lib/amd64:$build_dir/jre/lib/amd64/server
 
 # Run subsequent node/npm commands from the build path
 cd $build_dir
@@ -80,7 +81,7 @@ then
 else
   wget https://www.dropbox.com/s/2xpql5u1ncy2c6x/openjdk.tar.gz
 fi
-tar xvf openjdk.tar.gz
+tar xvfq openjdk.tar.gz
 
 # If node_modules directory is checked into source control then
 # rebuild any native deps. Otherwise, restore from the build cache.
