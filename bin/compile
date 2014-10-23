@@ -81,7 +81,7 @@ then
 else
   wget https://www.dropbox.com/s/2xpql5u1ncy2c6x/openjdk.tar.gz
 fi
-tar xvfq openjdk.tar.gz
+tar xvf openjdk.tar.gz
 
 # If node_modules directory is checked into source control then
 # rebuild any native deps. Otherwise, restore from the build cache.
