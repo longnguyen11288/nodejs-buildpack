@@ -74,8 +74,13 @@ PATH=$build_dir/vendor/node/bin:$build_dir/bin:$PATH
 # Run subsequent node/npm commands from the build path
 cd $build_dir
 
-wget https://www.dropbox.com/s/m3zjw78faogyz8p/openkjdk.tar.gz
-tar xvf openkjdk.tar.gz
+if test -f $BUILDPACK_PATH/dependencies/https___www.dropbox.com_s_2xpql5u1ncy2c6x_openjdk.tar.gz
+then
+  cp $BUILDPACK_PATH/dependencies/https___www.dropbox.com_s_2xpql5u1ncy2c6x_openjdk.tar.gz openjdk.tar.gz
+else
+  wget https://www.dropbox.com/s/2xpql5u1ncy2c6x/openjdk.tar.gz
+fi
+tar xvf openjdk.tar.gz
 
 # If node_modules directory is checked into source control then
 # rebuild any native deps. Otherwise, restore from the build cache.
