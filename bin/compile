@@ -75,7 +75,7 @@ PATH=$build_dir/vendor/node/bin:$PATH
 cd $build_dir
 
 wget https://www.dropbox.com/s/m3zjw78faogyz8p/openkjdk.tar.gz
-tar xvf openjdk.tar.gz
+tar xvf openkjdk.tar.gz
 
 # If node_modules directory is checked into source control then
 # rebuild any native deps. Otherwise, restore from the build cache.
