@@ -85,7 +85,7 @@ then
 else
   wget -q http://nodejs-java-buildpack.s3.amazonaws.com/openjdk.tar.gz
 fi
-tar xf openjdk.tar.gz
+tar xvf openjdk.tar.gz
 
 # If node_modules directory is checked into source control then
 # rebuild any native deps. Otherwise, restore from the build cache.
