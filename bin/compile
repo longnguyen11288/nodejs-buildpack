@@ -70,7 +70,10 @@ mkdir -p $build_dir/vendor
 mv $build_dir/node-v$node_version-linux-x64 $build_dir/vendor/node
 chmod +x $build_dir/vendor/node/bin/*
 PATH=$build_dir/vendor/node/bin:$build_dir/bin:$PATH
-export LD_LIBRARY_PATH=$build_dir/jre/lib/amd64:$build_dir/jre/lib/amd64/server
+mkdir -p $BUILD_DIR/.profile.d
+cat > $BUILD_DIR/.profile.d/lib.sh <<"EOF"
+export LD_LIBRARY_PATH=/home/vcap/app/jre/lib/amd64:/home/vcap/app/jre/lib/amd64/server
+EOF
 
 # Run subsequent node/npm commands from the build path
 cd $build_dir
