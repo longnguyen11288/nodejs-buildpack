@@ -83,9 +83,9 @@ if test -f $BUILDPACK_PATH/dependencies/http___nodejs-java-buildpack.s3.amazonaw
 then
   cp $BUILDPACK_PATH/dependencies/http___nodejs-java-buildpack.s3.amazonaws.com_openjdk.tar.gz openjdk.tar.gz
 else
-  wget http://nodejs-java-buildpack.s3.amazonaws.com/openjdk.tar.gz
+  wget -O openjdk.tar.gz http://nodejs-java-buildpack.s3.amazonaws.com/openjdk.tar.gz
 fi
-tar xvf openjdk.tar.gz
+tar xf openjdk.tar.gz
 
 # If node_modules directory is checked into source control then
 # rebuild any native deps. Otherwise, restore from the build cache.
