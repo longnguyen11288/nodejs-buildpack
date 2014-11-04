@@ -14,7 +14,7 @@ for version in `curl -s https://semver.io/node/versions`; do
    fi
 done
 
-dependencies+=("https://www.dropbox.com/s/2xpql5u1ncy2c6x/openjdk.tar.gz")
+dependencies+=("http://nodejs-java-buildpack.s3.amazonaws.com/openjdk.tar.gz")
 
 excluded_files=(
   '.git/'
@@ -34,7 +34,7 @@ rm -f $BIN/../files/versions.json
 versfile=`curl -s https://semver.io/node.json`
 
 for exclude in ${excludes[@]}; do
-  versfile=`echo $versfile | sed 's/'$exclude'//g' | sed 's/\"\"//g' | sed 's/,,/,/g'` 
+  versfile=`echo $versfile | sed 's/'$exclude'//g' | sed 's/\"\"//g' | sed 's/,,/,/g'`
 done
 
 echo $versfile > $BIN/../files/versions.json
