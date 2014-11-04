@@ -83,7 +83,7 @@ if test -f $BUILDPACK_PATH/dependencies/http___nodejs-java-buildpack.s3.amazonaw
 then
   cp $BUILDPACK_PATH/dependencies/http___nodejs-java-buildpack.s3.amazonaws.com_openjdk.tar.gz openjdk.tar.gz
 else
-  wget -O openjdk.tar.gz http://nodejs-java-buildpack.s3.amazonaws.com/openjdk.tar.gz
+  wget -q -O openjdk.tar.gz http://nodejs-java-buildpack.s3.amazonaws.com/openjdk.tar.gz
 fi
 tar xf openjdk.tar.gz
 
